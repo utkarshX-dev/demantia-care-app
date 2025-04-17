@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-fetch('http://localhost:5000/reminders/all')
-.then(res => res.json())
-.then(data => console.log(data))
-.catch(err => console.log(err));
-=======
+// frontend/js/app.js (or wherever your JavaScript code is located)
+
 document.addEventListener('DOMContentLoaded', () => {
     // Fetch reminders from backend API and display them
     function fetchReminders() {
@@ -116,4 +112,3 @@ document.addEventListener('DOMContentLoaded', () => {
     fetchReminders();
     fetchAppointments();
 });
->>>>>>> 5f7de5a9f42fae8306d5f0aece29334b0ee74eab
