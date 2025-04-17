@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require('express');
 const router = express.Router();
 const GameScore = require('../models/GameScore');
@@ -34,6 +35,21 @@ router.get('/leaderboard', (req, res) => {
             console.error('Error fetching leaderboard:', err);
             res.status(500).send('Error fetching leaderboard');
         });
+=======
+// routes/reminderRoutes.js
+const express = require('express');
+const router = express.Router();
+const Reminder = require('../models/Reminder');
+router.post('/add', async (req, res) => {
+    const reminder = new Reminder(req.body);
+    await reminder.save();
+    res.send('Reminder Saved');
+});
+
+router.get('/all', async (req, res) => {
+    const reminders = await Reminder.find();
+    res.json(reminders);
+>>>>>>> 5f7de5a9f42fae8306d5f0aece29334b0ee74eab
 });
 
 module.exports = router;

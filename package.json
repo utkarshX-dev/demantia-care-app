@@ -1,8 +1,24 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
+=======
+  "name": "demantia-app-folder",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+>>>>>>> 5f7de5a9f42fae8306d5f0aece29334b0ee74eab
     "express": "^5.1.0",
     "mongoose": "^8.13.2"
   }
