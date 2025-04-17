@@ -12,7 +12,15 @@ A full-stack web application designed to assist dementia patients and their care
 - 📈 Simple and user-friendly interface
 
 ---
+## 🗣️ **Contributors**
 
+- **Utkarsh Bhandari** – Backend Developer
+- **Vivek Kumar** – Backend Developer
+- **Vansh Rana** – Frontend Developer
+- **Vinayak Saini** – Frontend Developer
+
+Feel free to contribute to the project by forking and submitting pull requests!
+---
 ## ⚙️ Tech Stack
 
 | Area        | Tech Used                |
@@ -25,23 +33,15 @@ A full-stack web application designed to assist dementia patients and their care
 
 ---
 
-## 🗂️ Project Structure
-dementia-care-app/
-├── backend/
-│   ├── server.js                # Main Express server file
-│   ├── models/
-│   │   └── Reminder.js          # Mongoose schema for medicine reminders
-│   ├── routes/
-│   │   └── reminderRoutes.js    # API routes for reminders
-│   └── controllers/
-│       └── reminderController.js # (Optional) Business logic for routes
-│
-├── frontend/
-│   ├── index.html               # Main HTML file
-│   ├── styles.css               # CSS styling
-│   └── app.js                   # JavaScript for frontend logic (fetch, events)
-│
-├── .env                          # Environment variables (MongoDB URI, etc.)
-├── package.json                  # Node.js dependencies
-└── README.md                     # Project documentation
+## 📝 Usage
+
+1. **To start the backend server**:
+
+   ```bash
+   cd backend
+   node server.js
+
+2. **To view the frontend, open frontend/index.html in a browser**.
+
+
 
