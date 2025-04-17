@@ -1,0 +1,27 @@
+<!-- views/services.ejs -->
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<%- include('navbar') %>
+
+<div class="container mx-auto p-6">
+    <h1 class="text-3xl font-semibold mb-4">Our Services</h1>
+    <p class="text-lg text-gray-700">Here is a list of services we provide for dementia care...</p>
+</div>
+
+<div class="container mx-auto p-6 mt-8 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">Contact Us</h2>
+    <p class="text-lg text-gray-700">123 Main Street, Cityville</p>
+    <p class="text-lg text-gray-700">Email: info@dementiacare.com</p>
+    <p class="text-lg text-gray-700">Phone: (123) 456-7890</p>
+</div>
+
+<div class="container mx-auto p-6 mt-8 bg-gray-100 rounded-lg shadow-md">
+    <h2 class="text-2xl font-semibold mb-4">Quick Links</h2>
+    <ul class="list-disc pl-6 space-y-2">
+        <li><a href="/about" class="text-blue-600 hover:text-blue-800">About Us</a></li>
+        <li><a href="/services" class="text-blue-600 hover:text-blue-800">Services</a></li>
+        <li><a href="/testimonials" class="text-blue-600 hover:text-blue-800">Testimonials</a></li>
+        <li><a href="/contact" class="text-blue-600 hover:text-blue-800">Contact</a></li>
+    </ul>
+</div>
+
+<%- include('footer') %>
