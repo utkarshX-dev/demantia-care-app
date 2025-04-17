@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dementia Care</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .navbar-link:hover {
+            color: #2563eb;
+            transition: color 0.3s ease;
+        }
+        .footer-link:hover {
+            text-decoration: underline;
+            color: #3b82f6;
+        }
+        .gradient-background {
+            background: linear-gradient(to right, #e0e8ff, #e0e8ff);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 gradient-background">
+
+    <!-- Navbar -->
+    <header class="bg-white shadow-md sticky top-5 rounded-xl mx-8 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <a href="/" class="text-3xl font-semibold">
+                    <span class="text-blue-600">ReMind</span>
+                </a>
+                <div class="hidden md:flex space-x-6">
+                    <a href="/" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl text-blue-600">Home</a>
+                    <a href="/about" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">About</a>
+                    <a href="/services" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">Services</a>
+                    <a href="/contact" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">Contact</a>
+
+                    <!-- Conditional rendering of login/signup links based on authentication -->
+                    <% if (!user) { %>
+                        <a href="/login" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">Login</a>
+                        <a href="/signup" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">Sign Up</a>
+                    <% } else { %>
+                        <a href="/profile" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">Profile</a>
+                        <a href="/logout" class="text-gray-700 hover:text-blue-600 navbar-link font-bold text-xl">Logout</a>
+                    <% } %>
+                </div>
+                <button class="md:hidden text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                         xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                              d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="container mx-auto mt-16 px-6 py-12 rounded-xl shadow-md bg-white w-3/4">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <h1 class="text-4xl font-bold text-gray-800 mb-6">Compassionate Care for Dementia Patients</h1>
+                <p class="text-gray-600 text-lg mb-8">Providing personalized support and solutions to enhance the quality of life for individuals and families affected by dementia.</p>
+                <a href="/services" class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                    Explore Our Services
+                </a>
+            </div>
+            <div class="md:w-1/2">
+                <img src="/utils/1.jpg" alt="Dementia Care" class="w-full h-auto rounded-xl shadow-lg">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="container mt-20 mx-auto px-6 py-12 rounded-xl shadow-md bg-white w-3/4">
+        <div class="flex flex-col md:flex-row items-center gap-8">
+            <div class="md:w-1/2">
+                <img src="/utils/2.jpg" alt="Elderly Support" class="max-w-sm h-auto rounded-xl shadow-lg">
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-3xl font-semibold text-gray-800 mb-6">Dedicated Support for Every Stage</h2>
+                <p class="text-gray-600 text-lg mb-8">From early diagnosis to advanced care, our comprehensive services are tailored to meet the unique needs of each individual.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="container mx-auto mt-20 px-6 py-12 bg-gray-100 rounded-xl shadow-md w-4/5">
+        <div class="text-center">
+            <h2 class="text-3xl font-semibold text-gray-800 mb-6">Ready to Get Started?</h2>
+            <% if (!user) { %>
+                <div class="space-x-4">
+                    <a href="/login" class="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                        Login
+                    </a>
+                    <a href="/signup" class="inline-block bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                        Sign Up
+                    </a>
+                </div>
+            <% } else { %>
+                <p class="text-lg text-gray-600 mt-4">Welcome, <%= user.name %>! We're excited to have you on board. Let's make a difference together in the care and support of dementia patients.</p>
+            <% } %>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 mt-24 py-12 text-white">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                <p class="text-gray-300">123 Main Street, Cityville</p>
+                <p class="text-gray-300">Email: info@dementiacare.com</p>
+                <p class="text-gray-300">Phone: (123) 456-7890</p>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="/about" class="text-gray-300 hover:text-blue-300 footer-link">About Us</a></li>
+                    <li><a href="/services" class="text-gray-300 hover:text-blue-300 footer-link">Services</a></li>
+                    <li><a href="#" class="text-gray-300 hover:text-blue-300 footer-link">Testimonials</a></li>
+                    <li><a href="/contact" class="text-gray-300 hover:text-blue-300 footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <h4 class="text-lg font-semibold mb-4">Stay Connected</h4>
+                <p class="text-gray-300">Subscribe to our newsletter for updates and resources.</p>
+                <div class="mt-4">
+                    <input type="email" placeholder="Your Email" class="bg-gray-700 text-white rounded-md py-2 px-4 focus:outline-none">
+                    <button class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition duration-300">Subscribe</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto px-6 mt-8 text-center text-gray-400">
+            &copy; 2025 DementiaCare. All rights reserved.
+        </div>
+    </footer>
+
+</body>
+</html>
