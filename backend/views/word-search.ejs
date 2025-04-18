@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Search Game</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #e3f2fd;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(10, 50px); /* 10 columns for the grid */
+            grid-gap: 5px;
+            justify-content: center;
+            margin-top: 50px;
+            width: 100%;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .grid div {
+            width: 50px;
+            height: 50px;
+            background-color: #66bb6a;
+            color: white;
+            text-align: center;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            min-width: 50px;
+            min-height: 50px;
+            border-radius: 5px;
+        }
+        .word-search-container {
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Include Navbar -->
+    <%- include('navbar') %>
+
+    <div class="container word-search-container">
+        <h2 class="text-center mt-5">Word Search Game</h2>
+
+        <!-- Word Search Grid -->
+        <div class="grid">
+            <!-- Grid cells will be dynamically generated here -->
+            <% for (let row = 0; row < grid.length; row++) { %>
+                <% for (let col = 0; col < grid[row].length; col++) { %>
+                    <div class="grid-cell" data-row="<%= row %>" data-col="<%= col %>">
+                        <%= grid[row][col] %>
+                    </div>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+
+    <!-- Include Footer -->
+    <%- include('footer') %>
+
+    <script>
+        // Example JavaScript logic for interaction (like word highlighting) can go here
+        document.querySelectorAll('.grid-cell').forEach(cell => {
+            cell.addEventListener('click', function() {
+                this.classList.toggle('selected'); // Toggle selection on click
+            });
+        });
+    </script>
+
+</body>
+</html>
